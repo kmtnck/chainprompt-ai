@@ -1,0 +1,27 @@
+name: "suite-ai"
+
+services:
+  chainprompt-ai:
+    image: chainprompt-ai-local:${IMG_VERSION:-latest}
+    container_name: chainprompt-ai-local
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "5500:5000"
+      - "6000:6000"      
+      - "9339:9229"
+    env_file:
+      - ./.env.dev
+    networks:
+      - network-chainprompt-docker
+    volumes:
+      - ./src/datasets/fileset/conversations:/app/datasets/fileset/conversations
+      - ./:/usr/app
+      - /usr/app/node_modules      
+    entrypoint: ./entry-point.sh 
+
+
+networks:
+  network-chainprompt-docker:
+    driver: bridge
