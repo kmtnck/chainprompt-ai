@@ -18,14 +18,22 @@ La chiave API KEY è necessaria nel caso in cui si accede ad un LLM di terze par
 Assicurati di configurare correttamente le seguenti variabili d'ambiente:
 
 ```dotenv
+NODE_ENV=development
 PORT=5000
-OPENAI_API_KEY='api key server ai'
+HEADER_TIMEOUT_UNDICI=0
 SOCKET_PORT=6000
-URI_LOCALAI='http://%HOSTNAME%:1234/v1/chat/completions'
-#URI_LOCALAI='http://%HOSTNAME%:11434/api/chat'
+OPENAI_API_KEY='api-key openai'
+URI_LOCALAI='http://eleanor.station:1234/v1/chat/completions'
+#URI_LOCALAI='http://kali.station:11434/api/chat'
+URI_LANGCHAIN_OLLAMA='http://kali.station:11434'
+URI_LANGCHAIN_LLMSTUDIO='http://eleanor.station:1234/v1'
 LOCAL_MODEL_NAME='openchat'
-NAME_ASSISTANT="Assistente Kppa"
-PATH_FILESET='datasets/fileset'
+NAME_ASSISTANT="Chainprompt AI"
+PATH_FILESET='src/datasets/fileset'
+PATH_CONVERSATION='src/datasets/fileset/conversations'
+LANGCHAIN_API_KEY=ls__1fd69b0169894e22b6562f1c25de510b
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_CALLBACKS_BACKGROUND=true
 ```
 
 Le porte qui definite sono interne al network docker, per modificare la porta esposta all'host e quindi alla rete esterna, è necessario modificare la configurazione sul docker compose/local.yml
