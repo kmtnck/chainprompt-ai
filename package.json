@@ -4,16 +4,11 @@
   "description": "Un applicazione server scritta in typescript con express e langchain per realizzare interessanti applicazioni prompt oriented.",
   "main": "server.js",
   "type": "module",
-  "publishConfig": {
-    "registry": "http://alessandromodica.com:8081/repository/npm-cloud-pubblico/"
-  },
   "scripts": {
     "build": "tsc",
     "start": "node --no-warnings=ExperimentalWarning --loader ts-node/esm  src/server.ts ./tsconfig.json",
     "start-dev": "nodemon --exec node --inspect=0.0.0.0:9229 --no-warnings=ExperimentalWarning --loader ts-node/esm  src/server.ts ./tsconfig.json",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "npm version $npm_config_versione -m 'Rilasciata una nuova release backend' && git push",
-    "patch": "npm version patch -m 'Rilasciata una nuova patch backend' && git push"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
