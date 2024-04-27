@@ -1,3 +1,4 @@
 node_modules
+dist
 src/datasets/fileset/conversations
 langsmith-apikey

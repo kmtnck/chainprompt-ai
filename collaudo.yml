@@ -1,9 +1,9 @@
 name: "suite-ai"
 
 services:
-  chatbot-kppa:
-    image: chainprompt-ai-local:${IMG_VERSION:-latest}
-    container_name: chainprompt-ai-local
+  open-chainprompt-ai-collaudo:
+    image: open-chainprompt-ai-collaudo:${IMG_VERSION:-latest}
+    container_name: open-chainprompt-ai-collaudo
     build:
       context: ./
       dockerfile: Dockerfile
@@ -13,7 +13,7 @@ services:
     env_file:
       - ./.env.collaudo
     networks:
-      - network-chainprompt-docker
+      - network-open-chainprompt-docker
     volumes:
       - ./src/datasets/fileset/conversations:/app/datasets/fileset/conversations
       - ./:/usr/app
@@ -22,5 +22,5 @@ services:
 
 
 networks:
-  network-chainprompt-docker:
+  network-open-chainprompt-docker:
     driver: bridge

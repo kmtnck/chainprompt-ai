@@ -1,9 +1,9 @@
 name: "suite-ai"
 
 services:
-  chainprompt-ai:
-    image: chainprompt-ai-local:${IMG_VERSION:-latest}
-    container_name: chainprompt-ai-local
+  open-chainprompt-ai-local:
+    image: open-chainprompt-ai-local:${IMG_VERSION:-latest}
+    container_name: open-chainprompt-ai-local
     build:
       context: ./
       dockerfile: Dockerfile
@@ -14,7 +14,7 @@ services:
     env_file:
       - ./.env.dev
     networks:
-      - network-chainprompt-docker
+      - network-open-chainprompt-docker
     volumes:
       - ./src/datasets/fileset/conversations:/app/datasets/fileset/conversations
       - ./:/usr/app
@@ -23,5 +23,5 @@ services:
 
 
 networks:
-  network-chainprompt-docker:
+  network-open-chainprompt-docker:
     driver: bridge
