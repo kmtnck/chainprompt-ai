@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import https from 'https';
+import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import cors from 'cors';
@@ -44,12 +45,15 @@ app.use(apiversion, api);
 console.log(`Importing api completed!`);
 
 //integrazione https ssl
-const sslOptions: https.ServerOptions = {
+/*const sslOptions: https.ServerOptions = {
     key: fs.readFileSync(path.resolve(__dirname, "/usr/app/src/certs/privkey.pem")),
     cert: fs.readFileSync(path.resolve(__dirname, "/usr/app/src/certs/fullchain.pem")),
 };
 const server: https.Server = https.createServer(sslOptions, app); //http.createServer(app);
 console.log(`HTTPS server created!`);
+*/
+const server: http.Server = http.createServer(app);
+console.log(`HTTP server created!`);
 
 server.listen(port, () => console.log(`${nameAssistant} avviato sulla porta:${port}`));
 
