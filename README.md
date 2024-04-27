@@ -95,11 +95,11 @@ Questo campo rappresenta la temperatura della risposta generata dal modello. La 
 
 Per effettuare la build dell'immagine Docker, esegui il comando dalla base del progetto:
 
-`docker compose -f compose/local.yml build`
+`docker compose -f local.yml build`
 
 Per avviarlo in foreground, utile per il monitoraggio in sviluppo eseguire il comando
 
-`docker compose -f compose/local.yml up`
+`docker compose -f local.yml up`
 
 
 Altrimenti usare i comandi `create` per creare il container e `start` per avviare docker normalmente.
@@ -108,7 +108,7 @@ Per analizzare i log in real-time eseguire il comando `logs -f`
 
 Per accedere nel container docker eseguire il comando
 
-`docker exec -it chatbot-kppa-local bash`
+`docker exec -it open-chainprompt-ai-local bash`
 
 # Contributi
 Siamo aperti ai contributi! Se desideri contribuire a questo progetto, ti preghiamo di aprire una nuova issue o inviare una pull request.
